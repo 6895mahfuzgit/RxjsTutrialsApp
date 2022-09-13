@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FromEventComponent } from './from-event/from-event.component';
 import { OperatorsBtnComponent } from './operators-btn/operators-btn.component';
 import { FormsModule } from '@angular/forms';
+import { FromEventService } from './from-event/from-event.service';
 
 const routes: Routes = [
 
@@ -26,6 +27,9 @@ const routes: Routes = [
     OperatorTutorialsComponent,
     OperatorsBtnComponent,
     FromEventComponent
+  ],
+  providers:[
+    FromEventService
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

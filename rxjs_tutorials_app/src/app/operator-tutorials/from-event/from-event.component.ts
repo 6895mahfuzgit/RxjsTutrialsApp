@@ -1,52 +1,49 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, fromEvent, Subject, takeUntil, takeWhile } from 'rxjs';
+import { fromEvent, Observable, of, Subject, takeUntil } from 'rxjs';
+import { FromEventService } from './from-event.service';
 
 @Component({
   selector: 'app-from-event',
   templateUrl: './from-event.component.html',
   styleUrls: ['./from-event.component.css']
 })
-export class FromEventComponent implements OnInit,OnDestroy {
+export class FromEventComponent implements OnInit, OnDestroy {
+  clickEvent$!: Observable<Event>;
+  keyupEvent$!: Observable<Event>;
+  eventData$!: Observable<Event>;
 
-  clickEvent$ = fromEvent(document, 'click');
-  keyupEvent$ = fromEvent(document, 'keyup');
-  inActiveKeyupevent$=new BehaviorSubject<boolean>(true);
-  inActiveClickevent$=new BehaviorSubject<boolean>(true);
-  inActive$=new Subject<boolean>();
-  eventData: Event={} as Event;
+  clickEventStatus$: Observable<boolean> = of(false);
+  keyupEventStatus$: Observable<boolean> = of(false);
+  inActive$ = new Subject<boolean>();
+  constructor(private fromEventService: FromEventService) { }
 
-  constructor() { }
-  
   ngOnInit() {
-   
+    this.eventData$ = this.fromEventService.eventData$;
+    this.clickEventStatus$ = this.fromEventService.isActiveClickeventStatus$;
+    this.keyupEventStatus$ = this.fromEventService.isActiveKeyupEventStatus$;
+    this.fromEventService.clickEvent$.pipe(takeUntil(this.inActive$)).subscribe(data => { this.fromEventService.changeEventData(data) });
+    this.fromEventService.keyupEvent$.pipe(takeUntil(this.inActive$)).subscribe(data => { this.fromEventService.changeEventData(data) });
   }
 
-  startKeyupOverableEvent() {
-    this.inActiveKeyupevent$.next(false);
-    this.keyupEvent$.pipe(takeWhile(()=>this.inActiveKeyupevent$.value==false),takeUntil(this.inActive$)).subscribe(data => {
-      this.eventData = data;
-    });
+  startClickEvent() {
+    this.fromEventService.changeIsActiveClickeventStatus(true);
   }
 
-  stopKeyupOverableEvent(){
-    this.eventData={} as Event;
-    this.inActiveKeyupevent$.next(true);
+  stopClickEvent() {
+    this.fromEventService.changeIsActiveClickeventStatus(false);
   }
- 
 
-  startObserableClickEvent() {
-    this.inActiveClickevent$.next(false);
-    this.clickEvent$.pipe(takeWhile(()=>this.inActiveClickevent$.value==false),takeUntil(this.inActive$)).subscribe(data => {
-      this.eventData = data;
-    });
+  startKeyupEvent() {
+    this.fromEventService.changeIsActiveKeyupeventStatus(true);
   }
-  
-  stopObserableClickEvent(){
-    this.eventData={} as Event;
-    this.inActiveClickevent$.next(true);
+
+  stopKeyupEvent() {
+    this.fromEventService.stopKeyupEvent();
   }
 
   ngOnDestroy(): void {
+    this.fromEventService.changeEventData({} as Event);
+    this.fromEventService.clearAllEventActionStatus();
     this.inActive$.next(true);
     this.inActive$.unsubscribe();
   }
