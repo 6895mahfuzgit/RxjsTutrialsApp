@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, fromEvent, Observable, switchMap, switchMapTo, takeWhile } from 'rxjs';
+import { BehaviorSubject, fromEvent, switchMap, takeWhile } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
