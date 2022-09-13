@@ -1,0 +1,11 @@
+<div>
+  
+<button  *ngIf="inActiveClickevent$.value==true" (click)='startObserableClickEvent()'>Start click event</button>
+<button  *ngIf="inActiveClickevent$.value==false" (click)='stopObserableClickEvent()'>Stop click event</button>
+<button  *ngIf="inActiveKeyupevent$.value==true" (click)="startKeyupOverableEvent()">Start keyupb event</button>
+<button  *ngIf="inActiveKeyupevent$.value==false" (click)="stopKeyupOverableEvent()">Stop keyupb event</button>
+</div>
+<div>
+{{eventData?.type}}
+</div>
+
