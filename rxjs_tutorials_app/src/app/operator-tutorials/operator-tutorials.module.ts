@@ -15,6 +15,7 @@ import { TimerOperatorComponent } from './timer-operator/timer-operator.componen
 import { MapOperatorComponent } from './map-operator/map-operator.component';
 import { FilterOperatorComponent } from './filter-operator/filter-operator.component';
 import { ReduceOperatorComponent } from './reduce-operator/reduce-operator.component';
+import { ScanOperatorComponent } from './scan-operator/scan-operator.component';
 
 const routes: Routes = [
 
@@ -30,6 +31,7 @@ const routes: Routes = [
       { path: 'map', component: MapOperatorComponent, title:'map example' },
       { path: 'filter', component: FilterOperatorComponent, title:'filter example' },
       { path: 'reduce', component: ReduceOperatorComponent, title:'reduce example' },
+      { path: 'scan', component: ScanOperatorComponent, title:'scan example' },
       
     ]
   },
@@ -54,7 +56,7 @@ const routes: Routes = [
     MapOperatorComponent,
     FilterOperatorComponent,
     ReduceOperatorComponent,
-
+    ScanOperatorComponent,
   ],
   providers: [
     FromEventService,

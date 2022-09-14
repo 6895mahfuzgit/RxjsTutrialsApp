@@ -15,6 +15,7 @@ export class ReduceOperatorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.totalSum$.subscribe(console.log);
   }
 
 }
