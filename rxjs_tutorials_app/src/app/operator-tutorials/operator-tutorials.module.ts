@@ -12,6 +12,7 @@ import { RangeOperatorService } from './range-operator/range-operator.service';
 import { FromOperatorComponent } from './from-operator/from-operator.component';
 import { IntervalOperatorComponent } from './interval-operator/interval-operator.component';
 import { TimerOperatorComponent } from './timer-operator/timer-operator.component';
+import { MapOperatorComponent } from './map-operator/map-operator.component';
 
 const routes: Routes = [
 
@@ -24,7 +25,9 @@ const routes: Routes = [
       { path: 'from', component: FromOperatorComponent, title:'from example' },
       { path: 'interval', component: IntervalOperatorComponent, title:'interval example' },
       { path: 'timer', component: TimerOperatorComponent, title:'timer example' },
-      
+      { path: 'map', component: MapOperatorComponent, title:'map example' },
+    
+
     ]
   },
 
@@ -45,6 +48,9 @@ const routes: Routes = [
     FromOperatorComponent,
     IntervalOperatorComponent,
     TimerOperatorComponent,
+    MapOperatorComponent,
+    
+
   ],
   providers: [
     FromEventService,
