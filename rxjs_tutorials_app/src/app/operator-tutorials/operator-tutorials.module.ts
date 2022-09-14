@@ -6,15 +6,18 @@ import { FromEventComponent } from './from-event/from-event.component';
 import { OperatorsBtnComponent } from './operators-btn/operators-btn.component';
 import { FormsModule } from '@angular/forms';
 import { FromEventService } from './from-event/from-event.service';
+import { OfOperatorComponent } from './of-operator/of-operator.component';
 
 const routes: Routes = [
 
-  { path: '', component: OperatorTutorialsComponent,
-   children:[
-    { path: 'fromEvent', component: FromEventComponent},
-   ]
+  {
+    path: '', component: OperatorTutorialsComponent, title:'tutorials',
+    children: [
+      { path: 'fromEvent', component: FromEventComponent, title:'from event example' },
+      { path: 'of', component: OfOperatorComponent, title:'of example' }
+    ]
   },
-  
+
 ];
 
 @NgModule({
@@ -26,9 +29,10 @@ const routes: Routes = [
   declarations: [
     OperatorTutorialsComponent,
     OperatorsBtnComponent,
-    FromEventComponent
+    FromEventComponent,
+    OfOperatorComponent
   ],
-  providers:[
+  providers: [
     FromEventService
   ],
   schemas: [

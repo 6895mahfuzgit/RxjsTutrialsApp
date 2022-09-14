@@ -6,7 +6,7 @@ import { HomeComponent } from '../home/home.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent,title:'home' },
   {
     path: 'operator',
     loadChildren: () => import('./../operator-tutorials/operator-tutorials.module').then(m => m.OperatorTutorialsModule)
