@@ -7,6 +7,8 @@ import { OperatorsBtnComponent } from './operators-btn/operators-btn.component';
 import { FormsModule } from '@angular/forms';
 import { FromEventService } from './from-event/from-event.service';
 import { OfOperatorComponent } from './of-operator/of-operator.component';
+import { RangeOperatorComponent } from './range-operator/range-operator.component';
+import { RangeOperatorService } from './range-operator/range-operator.service';
 
 const routes: Routes = [
 
@@ -14,7 +16,8 @@ const routes: Routes = [
     path: '', component: OperatorTutorialsComponent, title:'tutorials',
     children: [
       { path: 'fromEvent', component: FromEventComponent, title:'from event example' },
-      { path: 'of', component: OfOperatorComponent, title:'of example' }
+      { path: 'of', component: OfOperatorComponent, title:'of example' },
+      { path: 'range', component: RangeOperatorComponent, title:'range example' },
     ]
   },
 
@@ -30,10 +33,12 @@ const routes: Routes = [
     OperatorTutorialsComponent,
     OperatorsBtnComponent,
     FromEventComponent,
-    OfOperatorComponent
+    OfOperatorComponent,
+    RangeOperatorComponent
   ],
   providers: [
-    FromEventService
+    FromEventService,
+    RangeOperatorService
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
