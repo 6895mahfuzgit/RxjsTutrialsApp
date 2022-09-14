@@ -14,6 +14,7 @@ import { IntervalOperatorComponent } from './interval-operator/interval-operator
 import { TimerOperatorComponent } from './timer-operator/timer-operator.component';
 import { MapOperatorComponent } from './map-operator/map-operator.component';
 import { FilterOperatorComponent } from './filter-operator/filter-operator.component';
+import { ReduceOperatorComponent } from './reduce-operator/reduce-operator.component';
 
 const routes: Routes = [
 
@@ -28,8 +29,8 @@ const routes: Routes = [
       { path: 'timer', component: TimerOperatorComponent, title:'timer example' },
       { path: 'map', component: MapOperatorComponent, title:'map example' },
       { path: 'filter', component: FilterOperatorComponent, title:'filter example' },
+      { path: 'reduce', component: ReduceOperatorComponent, title:'reduce example' },
       
-
     ]
   },
 
@@ -52,6 +53,7 @@ const routes: Routes = [
     TimerOperatorComponent,
     MapOperatorComponent,
     FilterOperatorComponent,
+    ReduceOperatorComponent,
 
   ],
   providers: [
