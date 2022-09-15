@@ -18,6 +18,7 @@ import { ReduceOperatorComponent } from './reduce-operator/reduce-operator.compo
 import { ScanOperatorComponent } from './scan-operator/scan-operator.component';
 import { CountTimeComponent } from './count-time/count-time.component';
 import { TapOperatorComponent } from './tap-operator/tap-operator.component';
+import { TakeOperatorComponent } from './take-operator/take-operator.component';
 
 const routes: Routes = [
 
@@ -36,8 +37,8 @@ const routes: Routes = [
       { path: 'scan', component: ScanOperatorComponent, title:'scan example' },
       { path: 'count-timer', component: CountTimeComponent, title:'count-timer example' },
       { path: 'tap', component: TapOperatorComponent, title:'tap example' },
-      
-      
+      { path: 'take', component:  TakeOperatorComponent, title:'take example' },
+     
     ]
   },
 
@@ -64,6 +65,7 @@ const routes: Routes = [
     ScanOperatorComponent,
     CountTimeComponent,
     TapOperatorComponent,
+    TakeOperatorComponent,
   ],
   providers: [
     FromEventService,
