@@ -20,6 +20,8 @@ import { CountTimeComponent } from './count-time/count-time.component';
 import { TapOperatorComponent } from './tap-operator/tap-operator.component';
 import { TakeOperatorComponent } from './take-operator/take-operator.component';
 import { TakeWhileOperatorComponent } from './take-while-operator/take-while-operator.component';
+import { DistinctUntilChangedDebounceTimeDistinctUntilChangedService } from './distinctUntilChanged-DebounceTime-DistinctUntilChanged/distinctUntilChanged-DebounceTime-DistinctUntilChanged.service';
+import { DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent } from './distinctUntilChanged-DebounceTime-DistinctUntilChanged/distinctUntilChanged-DebounceTime-DistinctUntilChanged.component';
 
 const routes: Routes = [
 
@@ -40,7 +42,7 @@ const routes: Routes = [
       { path: 'tap', component: TapOperatorComponent, title:'tap example' },
       { path: 'take', component:  TakeOperatorComponent, title:'take example' },
       { path: 'take-while', component:  TakeWhileOperatorComponent, title:'take while example' },
-     
+      { path: 'distinct-debounce', component:  DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent, title:'' },
       
     ]
   },
@@ -70,10 +72,13 @@ const routes: Routes = [
     TapOperatorComponent,
     TakeOperatorComponent,
     TakeWhileOperatorComponent,
+    DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent,
+
   ],
   providers: [
     FromEventService,
-    RangeOperatorService
+    RangeOperatorService,
+    DistinctUntilChangedDebounceTimeDistinctUntilChangedService
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
