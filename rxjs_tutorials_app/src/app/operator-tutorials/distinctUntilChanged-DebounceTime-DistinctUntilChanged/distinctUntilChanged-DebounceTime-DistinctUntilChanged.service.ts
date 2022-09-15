@@ -10,8 +10,8 @@ export class DistinctUntilChangedDebounceTimeDistinctUntilChangedService {
   searchTxt$ = this.searchTxtSubject.asObservable();
 
   result$ = this.searchTxt$.pipe(
-    distinctUntilChanged(),
     debounceTime(3000),
+    distinctUntilChanged(),
     tap(value => console.log(value)),
     switchMap(txt => `Searched for "${txt}"`));
 
