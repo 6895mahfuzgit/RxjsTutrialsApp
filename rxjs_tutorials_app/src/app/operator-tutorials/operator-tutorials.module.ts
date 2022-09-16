@@ -26,6 +26,7 @@ import { MergeMapOperatorComponent } from './merge-map-operator/merge-map-operat
 import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { ConcatMapComponent } from './concat-map/concat-map.component';
 import { ExhastMapComponent } from './exhast-map/exhast-map.component';
+import { StartWithEndWithOperatorsComponent } from './start-with-end-with-operators/start-with-end-with-operators.component';
 
 const routes: Routes = [
 
@@ -51,6 +52,7 @@ const routes: Routes = [
       { path: 'switch-map', component:  SwitchMapComponent, title:'' },
       { path: 'concat-map', component:  ConcatMapComponent, title:'' },
       { path: 'exhast-map', component:  ExhastMapComponent, title:'' },
+      { path: 'start-end-with', component:  StartWithEndWithOperatorsComponent, title:'' },
       
     ]
   },
@@ -85,6 +87,7 @@ const routes: Routes = [
     SwitchMapComponent,
     ConcatMapComponent,
     ExhastMapComponent,
+    StartWithEndWithOperatorsComponent,
   ],
   providers: [
     FromEventService,
