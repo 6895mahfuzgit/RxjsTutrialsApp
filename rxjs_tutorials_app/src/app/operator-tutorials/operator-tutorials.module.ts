@@ -24,6 +24,8 @@ import { DistinctUntilChangedDebounceTimeDistinctUntilChangedService } from './d
 import { DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent } from './distinctUntilChanged-DebounceTime-DistinctUntilChanged/distinctUntilChanged-DebounceTime-DistinctUntilChanged.component';
 import { MergeMapOperatorComponent } from './merge-map-operator/merge-map-operator.component';
 import { SwitchMapComponent } from './switch-map/switch-map.component';
+import { ConcatMapComponent } from './concat-map/concat-map.component';
+import { ExhastMapComponent } from './exhast-map/exhast-map.component';
 
 const routes: Routes = [
 
@@ -47,6 +49,8 @@ const routes: Routes = [
       { path: 'distinct-debounce', component:  DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent, title:'' },
       { path: 'merge-map', component:  MergeMapOperatorComponent, title:'' },
       { path: 'switch-map', component:  SwitchMapComponent, title:'' },
+      { path: 'concat-map', component:  ConcatMapComponent, title:'' },
+      { path: 'exhast-map', component:  ExhastMapComponent, title:'' },
       
     ]
   },
@@ -79,6 +83,8 @@ const routes: Routes = [
     DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent,
     MergeMapOperatorComponent,
     SwitchMapComponent,
+    ConcatMapComponent,
+    ExhastMapComponent,
   ],
   providers: [
     FromEventService,
