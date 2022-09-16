@@ -29,6 +29,7 @@ import { ExhastMapComponent } from './exhast-map/exhast-map.component';
 import { StartWithEndWithOperatorsComponent } from './start-with-end-with-operators/start-with-end-with-operators.component';
 import { ConcatOperatorComponent } from './concat-operator/concat-operator.component';
 import { MergeOperatorComponent } from './merge-operator/merge-operator.component';
+import { CombineLatestForkJoinComponent } from './combineLatest-forkJoin/combineLatest-forkJoin.component';
 
 const routes: Routes = [
 
@@ -57,6 +58,7 @@ const routes: Routes = [
       { path: 'start-end-with', component:  StartWithEndWithOperatorsComponent, title:'' },
       { path: 'concat', component:  ConcatOperatorComponent, title:'' },
       { path: 'merge', component:  MergeOperatorComponent, title:'' },
+      { path: 'combine-fork-comp', component:  CombineLatestForkJoinComponent, title:'' },
       
     ]
   },
@@ -94,6 +96,7 @@ const routes: Routes = [
     StartWithEndWithOperatorsComponent,
     ConcatOperatorComponent,
     MergeOperatorComponent,
+    CombineLatestForkJoinComponent,
   ],
   providers: [
     FromEventService,
