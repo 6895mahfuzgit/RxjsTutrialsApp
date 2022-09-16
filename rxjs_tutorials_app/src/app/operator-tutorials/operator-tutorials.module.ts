@@ -22,6 +22,7 @@ import { TakeOperatorComponent } from './take-operator/take-operator.component';
 import { TakeWhileOperatorComponent } from './take-while-operator/take-while-operator.component';
 import { DistinctUntilChangedDebounceTimeDistinctUntilChangedService } from './distinctUntilChanged-DebounceTime-DistinctUntilChanged/distinctUntilChanged-DebounceTime-DistinctUntilChanged.service';
 import { DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent } from './distinctUntilChanged-DebounceTime-DistinctUntilChanged/distinctUntilChanged-DebounceTime-DistinctUntilChanged.component';
+import { MergeMapOperatorComponent } from './merge-map-operator/merge-map-operator.component';
 
 const routes: Routes = [
 
@@ -43,6 +44,7 @@ const routes: Routes = [
       { path: 'take', component:  TakeOperatorComponent, title:'take example' },
       { path: 'take-while', component:  TakeWhileOperatorComponent, title:'take while example' },
       { path: 'distinct-debounce', component:  DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent, title:'' },
+      { path: 'merge-map', component:  MergeMapOperatorComponent, title:'' },
       
     ]
   },
@@ -73,7 +75,7 @@ const routes: Routes = [
     TakeOperatorComponent,
     TakeWhileOperatorComponent,
     DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent,
-
+    MergeMapOperatorComponent,
   ],
   providers: [
     FromEventService,
