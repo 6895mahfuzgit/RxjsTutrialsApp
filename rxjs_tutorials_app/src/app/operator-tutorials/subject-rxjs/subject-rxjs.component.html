@@ -1,0 +1,13 @@
+<p>
+  subject-rxjs works!
+  <br>
+  <button (click)="loadData()" > load data</button>
+  <br>
+<button (click)="clearData()" > clear data</button>
+<br>
+{{( load$| async) | json}}
+  {{posts | json}}
+</p>
+
+<app-loader *ngIf="( load$| async)!=false"></app-loader>
+

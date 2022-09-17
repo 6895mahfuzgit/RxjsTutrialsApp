@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { FromEventComponent } from './from-event/from-event.component';
 import { OperatorsBtnComponent } from './operators-btn/operators-btn.component';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+
 import { FromEventService } from './from-event/from-event.service';
 import { OfOperatorComponent } from './of-operator/of-operator.component';
 import { RangeOperatorComponent } from './range-operator/range-operator.component';
@@ -30,6 +32,10 @@ import { StartWithEndWithOperatorsComponent } from './start-with-end-with-operat
 import { ConcatOperatorComponent } from './concat-operator/concat-operator.component';
 import { MergeOperatorComponent } from './merge-operator/merge-operator.component';
 import { CombineLatestForkJoinComponent } from './combineLatest-forkJoin/combineLatest-forkJoin.component';
+import { SubjectRxjsComponent } from './subject-rxjs/subject-rxjs.component';
+import { LoaderComponent} from './subject-rxjs/loader/loader.component'; 
+import { SubjectRxjsService } from './subject-rxjs/_services/subject-rxjs.service';
+import { LoaderInterceptor } from './subject-rxjs/_interceptors/loader-interceptor';
 
 const routes: Routes = [
 
@@ -59,6 +65,7 @@ const routes: Routes = [
       { path: 'concat', component:  ConcatOperatorComponent, title:'' },
       { path: 'merge', component:  MergeOperatorComponent, title:'' },
       { path: 'combine-fork-comp', component:  CombineLatestForkJoinComponent, title:'' },
+      { path: 'subject', component:  SubjectRxjsComponent, title:'' },
       
     ]
   },
@@ -69,7 +76,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HttpClientModule
   ],
   declarations: [
     OperatorTutorialsComponent,
@@ -97,11 +105,16 @@ const routes: Routes = [
     ConcatOperatorComponent,
     MergeOperatorComponent,
     CombineLatestForkJoinComponent,
+    SubjectRxjsComponent,
+    LoaderComponent,
+
   ],
   providers: [
     FromEventService,
     RangeOperatorService,
-    DistinctUntilChangedDebounceTimeDistinctUntilChangedService
+    DistinctUntilChangedDebounceTimeDistinctUntilChangedService,
+    SubjectRxjsService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
