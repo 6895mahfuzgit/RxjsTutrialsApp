@@ -40,6 +40,8 @@ import { ShareOperatorService } from './share-operator/share-operator.service';
 import { ShareOperatorComponent } from './share-operator/share-operator.component';
 import { ShareReplaySubjectComponent } from './share-replay-subject/share-replay-subject.component';
 import { ShareReplaySubjectService } from './share-replay-subject/share-replay-subject.service';
+import { SharedReplayOperatorComponent } from './shared-replay-operator/shared-replay-operator.component';
+import { SharedRaplayOperatorService } from './shared-replay-operator/shared-raplay-operator.service';
 
 const routes: Routes = [
 
@@ -72,6 +74,7 @@ const routes: Routes = [
       { path: 'subject', component:  SubjectRxjsComponent, title:'' },
       { path: 'shared', component:    ShareOperatorComponent, title:'' },
       { path: 'replay-subject', component:    ShareReplaySubjectComponent, title:'' },
+      { path: 'shared-replay', component:    SharedReplayOperatorComponent, title:'' },
       
     ]
   },
@@ -115,6 +118,7 @@ const routes: Routes = [
     LoaderComponent,
     ShareOperatorComponent,
     ShareReplaySubjectComponent,
+    SharedReplayOperatorComponent,
   ],
   providers: [
     FromEventService,
@@ -123,6 +127,7 @@ const routes: Routes = [
     SubjectRxjsService,
     ShareOperatorService,
     ShareReplaySubjectService,
+    SharedRaplayOperatorService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   schemas: [
