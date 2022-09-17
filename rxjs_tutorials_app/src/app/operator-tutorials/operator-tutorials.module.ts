@@ -36,6 +36,8 @@ import { SubjectRxjsComponent } from './subject-rxjs/subject-rxjs.component';
 import { LoaderComponent} from './subject-rxjs/loader/loader.component'; 
 import { SubjectRxjsService } from './subject-rxjs/_services/subject-rxjs.service';
 import { LoaderInterceptor } from './subject-rxjs/_interceptors/loader-interceptor';
+import { ShareOperatorService } from './share-operator/share-operator.service';
+import { ShareOperatorComponent } from './share-operator/share-operator.component';
 
 const routes: Routes = [
 
@@ -66,7 +68,8 @@ const routes: Routes = [
       { path: 'merge', component:  MergeOperatorComponent, title:'' },
       { path: 'combine-fork-comp', component:  CombineLatestForkJoinComponent, title:'' },
       { path: 'subject', component:  SubjectRxjsComponent, title:'' },
-      
+      { path: 'shared', component:    ShareOperatorComponent, title:'' },
+    
     ]
   },
 
@@ -107,13 +110,14 @@ const routes: Routes = [
     CombineLatestForkJoinComponent,
     SubjectRxjsComponent,
     LoaderComponent,
-
+    ShareOperatorComponent,
   ],
   providers: [
     FromEventService,
     RangeOperatorService,
     DistinctUntilChangedDebounceTimeDistinctUntilChangedService,
     SubjectRxjsService,
+    ShareOperatorService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   schemas: [
