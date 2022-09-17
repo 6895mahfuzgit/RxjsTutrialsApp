@@ -38,6 +38,8 @@ import { SubjectRxjsService } from './subject-rxjs/_services/subject-rxjs.servic
 import { LoaderInterceptor } from './subject-rxjs/_interceptors/loader-interceptor';
 import { ShareOperatorService } from './share-operator/share-operator.service';
 import { ShareOperatorComponent } from './share-operator/share-operator.component';
+import { ShareReplaySubjectComponent } from './share-replay-subject/share-replay-subject.component';
+import { ShareReplaySubjectService } from './share-replay-subject/share-replay-subject.service';
 
 const routes: Routes = [
 
@@ -69,7 +71,8 @@ const routes: Routes = [
       { path: 'combine-fork-comp', component:  CombineLatestForkJoinComponent, title:'' },
       { path: 'subject', component:  SubjectRxjsComponent, title:'' },
       { path: 'shared', component:    ShareOperatorComponent, title:'' },
-    
+      { path: 'replay-subject', component:    ShareReplaySubjectComponent, title:'' },
+      
     ]
   },
 
@@ -111,6 +114,7 @@ const routes: Routes = [
     SubjectRxjsComponent,
     LoaderComponent,
     ShareOperatorComponent,
+    ShareReplaySubjectComponent,
   ],
   providers: [
     FromEventService,
@@ -118,6 +122,7 @@ const routes: Routes = [
     DistinctUntilChangedDebounceTimeDistinctUntilChangedService,
     SubjectRxjsService,
     ShareOperatorService,
+    ShareReplaySubjectService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   schemas: [
