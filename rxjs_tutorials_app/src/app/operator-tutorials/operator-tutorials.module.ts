@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FromEventComponent } from './from-event/from-event.component';
 import { OperatorsBtnComponent } from './operators-btn/operators-btn.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FromEventService } from './from-event/from-event.service';
 import { OfOperatorComponent } from './of-operator/of-operator.component';
@@ -33,7 +33,7 @@ import { ConcatOperatorComponent } from './concat-operator/concat-operator.compo
 import { MergeOperatorComponent } from './merge-operator/merge-operator.component';
 import { CombineLatestForkJoinComponent } from './combineLatest-forkJoin/combineLatest-forkJoin.component';
 import { SubjectRxjsComponent } from './subject-rxjs/subject-rxjs.component';
-import { LoaderComponent} from './subject-rxjs/loader/loader.component'; 
+import { LoaderComponent } from './subject-rxjs/loader/loader.component';
 import { SubjectRxjsService } from './subject-rxjs/_services/subject-rxjs.service';
 import { LoaderInterceptor } from './subject-rxjs/_interceptors/loader-interceptor';
 import { ShareOperatorService } from './share-operator/share-operator.service';
@@ -43,40 +43,43 @@ import { ShareReplaySubjectService } from './share-replay-subject/share-replay-s
 import { SharedReplayOperatorComponent } from './shared-replay-operator/shared-replay-operator.component';
 import { SharedRaplayOperatorService } from './shared-replay-operator/shared-raplay-operator.service';
 import { AsyncSubjectComponent } from './async-subject/async-subject.component';
+import { AsyncScheduleComponent } from './async-schedule/async-schedule.component';
 
 const routes: Routes = [
 
   {
-    path: '', component: OperatorTutorialsComponent, title:'tutorials',
+    path: '', component: OperatorTutorialsComponent, title: 'tutorials',
     children: [
-      { path: 'fromEvent', component: FromEventComponent, title:'from event example' },
-      { path: 'of', component: OfOperatorComponent, title:'of example' },
-      { path: 'range', component: RangeOperatorComponent, title:'range example' },
-      { path: 'from', component: FromOperatorComponent, title:'from example' },
-      { path: 'interval', component: IntervalOperatorComponent, title:'interval example' },
-      { path: 'timer', component: TimerOperatorComponent, title:'timer example' },
-      { path: 'map', component: MapOperatorComponent, title:'map example' },
-      { path: 'filter', component: FilterOperatorComponent, title:'filter example' },
-      { path: 'reduce', component: ReduceOperatorComponent, title:'reduce example' },
-      { path: 'scan', component: ScanOperatorComponent, title:'scan example' },
-      { path: 'count-timer', component: CountTimeComponent, title:'count-timer example' },
-      { path: 'tap', component: TapOperatorComponent, title:'tap example' },
-      { path: 'take', component:  TakeOperatorComponent, title:'take example' },
-      { path: 'take-while', component:  TakeWhileOperatorComponent, title:'take while example' },
-      { path: 'distinct-debounce', component:  DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent, title:'' },
-      { path: 'merge-map', component:  MergeMapOperatorComponent, title:'' },
-      { path: 'switch-map', component:  SwitchMapComponent, title:'' },
-      { path: 'concat-map', component:  ConcatMapComponent, title:'' },
-      { path: 'exhast-map', component:  ExhastMapComponent, title:'' },
-      { path: 'start-end-with', component:  StartWithEndWithOperatorsComponent, title:'' },
-      { path: 'concat', component:  ConcatOperatorComponent, title:'' },
-      { path: 'merge', component:  MergeOperatorComponent, title:'' },
-      { path: 'combine-fork-comp', component:  CombineLatestForkJoinComponent, title:'' },
-      { path: 'subject', component:  SubjectRxjsComponent, title:'' },
-      { path: 'shared', component:    ShareOperatorComponent, title:'' },
-      { path: 'replay-subject', component:    ShareReplaySubjectComponent, title:'' },
-      { path: 'shared-replay', component:    SharedReplayOperatorComponent, title:'' },
-      { path: 'async-subject', component:    AsyncSubjectComponent, title:'' },
+      { path: 'fromEvent', component: FromEventComponent, title: 'from event example' },
+      { path: 'of', component: OfOperatorComponent, title: 'of example' },
+      { path: 'range', component: RangeOperatorComponent, title: 'range example' },
+      { path: 'from', component: FromOperatorComponent, title: 'from example' },
+      { path: 'interval', component: IntervalOperatorComponent, title: 'interval example' },
+      { path: 'timer', component: TimerOperatorComponent, title: 'timer example' },
+      { path: 'map', component: MapOperatorComponent, title: 'map example' },
+      { path: 'filter', component: FilterOperatorComponent, title: 'filter example' },
+      { path: 'reduce', component: ReduceOperatorComponent, title: 'reduce example' },
+      { path: 'scan', component: ScanOperatorComponent, title: 'scan example' },
+      { path: 'count-timer', component: CountTimeComponent, title: 'count-timer example' },
+      { path: 'tap', component: TapOperatorComponent, title: 'tap example' },
+      { path: 'take', component: TakeOperatorComponent, title: 'take example' },
+      { path: 'take-while', component: TakeWhileOperatorComponent, title: 'take while example' },
+      { path: 'distinct-debounce', component: DistinctUntilChangedDebounceTimeDistinctUntilChangedComponent, title: '' },
+      { path: 'merge-map', component: MergeMapOperatorComponent, title: '' },
+      { path: 'switch-map', component: SwitchMapComponent, title: '' },
+      { path: 'concat-map', component: ConcatMapComponent, title: '' },
+      { path: 'exhast-map', component: ExhastMapComponent, title: '' },
+      { path: 'start-end-with', component: StartWithEndWithOperatorsComponent, title: '' },
+      { path: 'concat', component: ConcatOperatorComponent, title: '' },
+      { path: 'merge', component: MergeOperatorComponent, title: '' },
+      { path: 'combine-fork-comp', component: CombineLatestForkJoinComponent, title: '' },
+      { path: 'subject', component: SubjectRxjsComponent, title: '' },
+      { path: 'shared', component: ShareOperatorComponent, title: '' },
+      { path: 'replay-subject', component: ShareReplaySubjectComponent, title: '' },
+      { path: 'shared-replay', component: SharedReplayOperatorComponent, title: '' },
+      { path: 'async-subject', component: AsyncSubjectComponent, title: '' },
+      { path: 'async-schedule', component: AsyncScheduleComponent, title: '' },
+
     ]
   },
 
@@ -120,7 +123,8 @@ const routes: Routes = [
     ShareOperatorComponent,
     ShareReplaySubjectComponent,
     SharedReplayOperatorComponent,
-    AsyncSubjectComponent
+    AsyncSubjectComponent,
+    AsyncScheduleComponent,
   ],
   providers: [
     FromEventService,
