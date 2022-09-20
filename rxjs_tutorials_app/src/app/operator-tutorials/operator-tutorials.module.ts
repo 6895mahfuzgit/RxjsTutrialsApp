@@ -42,6 +42,7 @@ import { ShareReplaySubjectComponent } from './share-replay-subject/share-replay
 import { ShareReplaySubjectService } from './share-replay-subject/share-replay-subject.service';
 import { SharedReplayOperatorComponent } from './shared-replay-operator/shared-replay-operator.component';
 import { SharedRaplayOperatorService } from './shared-replay-operator/shared-raplay-operator.service';
+import { AsyncSubjectComponent } from './async-subject/async-subject.component';
 
 const routes: Routes = [
 
@@ -75,7 +76,7 @@ const routes: Routes = [
       { path: 'shared', component:    ShareOperatorComponent, title:'' },
       { path: 'replay-subject', component:    ShareReplaySubjectComponent, title:'' },
       { path: 'shared-replay', component:    SharedReplayOperatorComponent, title:'' },
-      
+      { path: 'async-subject', component:    AsyncSubjectComponent, title:'' },
     ]
   },
 
@@ -119,6 +120,7 @@ const routes: Routes = [
     ShareOperatorComponent,
     ShareReplaySubjectComponent,
     SharedReplayOperatorComponent,
+    AsyncSubjectComponent
   ],
   providers: [
     FromEventService,
