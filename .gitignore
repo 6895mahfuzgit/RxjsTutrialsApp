@@ -1,0 +1,11 @@
+
+*.dll
+*.exe
+*.targets
+*.cache
+*.pdb
+*.suo
+bin/
+obj/
+Debug/
+Release/
