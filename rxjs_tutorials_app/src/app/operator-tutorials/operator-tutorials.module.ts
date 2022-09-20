@@ -47,6 +47,7 @@ import { AsyncScheduleComponent } from './async-schedule/async-schedule.componen
 import { AsapSchedulerComponent } from './asap-scheduler/asap-scheduler.component';
 import { AnimationFrameSchedulerComponent } from './animation-frame-scheduler/animation-frame-scheduler.component';
 import { QueueSchedulerComponent } from './queue-scheduler/queue-scheduler.component';
+import { PartitionExampleComponent } from './partition-example/partition-example.component';
 
 const routes: Routes = [
 
@@ -85,6 +86,7 @@ const routes: Routes = [
       { path: 'asap-schedule', component: AsapSchedulerComponent, title: '' },
       { path: 'animation-frame-schedule', component: AnimationFrameSchedulerComponent, title: '' },
       { path: 'queue-schedule', component: QueueSchedulerComponent, title: '' },
+      { path: 'partition', component: PartitionExampleComponent, title: '' },
       
       
     ]
@@ -134,7 +136,8 @@ const routes: Routes = [
     AsyncScheduleComponent,
     AsapSchedulerComponent,
     AnimationFrameSchedulerComponent,
-    QueueSchedulerComponent
+    QueueSchedulerComponent,
+    PartitionExampleComponent,
   ],
   providers: [
     FromEventService,
