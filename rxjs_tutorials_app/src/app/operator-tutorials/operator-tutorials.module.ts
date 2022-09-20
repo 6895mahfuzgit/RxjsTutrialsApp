@@ -45,6 +45,7 @@ import { SharedRaplayOperatorService } from './shared-replay-operator/shared-rap
 import { AsyncSubjectComponent } from './async-subject/async-subject.component';
 import { AsyncScheduleComponent } from './async-schedule/async-schedule.component';
 import { AsapSchedulerComponent } from './asap-scheduler/asap-scheduler.component';
+import { AnimationFrameSchedulerComponent } from './animation-frame-scheduler/animation-frame-scheduler.component';
 
 const routes: Routes = [
 
@@ -81,8 +82,8 @@ const routes: Routes = [
       { path: 'async-subject', component: AsyncSubjectComponent, title: '' },
       { path: 'async-schedule', component: AsyncScheduleComponent, title: '' },
       { path: 'asap-schedule', component: AsapSchedulerComponent, title: '' },
+      { path: 'animation-frame-schedule', component: AnimationFrameSchedulerComponent, title: '' },
       
-
     ]
   },
 
@@ -129,6 +130,7 @@ const routes: Routes = [
     AsyncSubjectComponent,
     AsyncScheduleComponent,
     AsapSchedulerComponent,
+    AnimationFrameSchedulerComponent
   ],
   providers: [
     FromEventService,
