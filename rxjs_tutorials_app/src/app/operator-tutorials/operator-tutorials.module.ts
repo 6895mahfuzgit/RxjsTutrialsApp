@@ -44,6 +44,7 @@ import { SharedReplayOperatorComponent } from './shared-replay-operator/shared-r
 import { SharedRaplayOperatorService } from './shared-replay-operator/shared-raplay-operator.service';
 import { AsyncSubjectComponent } from './async-subject/async-subject.component';
 import { AsyncScheduleComponent } from './async-schedule/async-schedule.component';
+import { AsapSchedulerComponent } from './asap-scheduler/asap-scheduler.component';
 
 const routes: Routes = [
 
@@ -79,6 +80,8 @@ const routes: Routes = [
       { path: 'shared-replay', component: SharedReplayOperatorComponent, title: '' },
       { path: 'async-subject', component: AsyncSubjectComponent, title: '' },
       { path: 'async-schedule', component: AsyncScheduleComponent, title: '' },
+      { path: 'asap-schedule', component: AsapSchedulerComponent, title: '' },
+      
 
     ]
   },
@@ -125,6 +128,7 @@ const routes: Routes = [
     SharedReplayOperatorComponent,
     AsyncSubjectComponent,
     AsyncScheduleComponent,
+    AsapSchedulerComponent,
   ],
   providers: [
     FromEventService,
