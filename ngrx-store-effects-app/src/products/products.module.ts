@@ -17,6 +17,7 @@ import * as fromContainers from './containers';
 
 // services
 import * as fromServices from './services';
+import { StoreEnum } from './store/enum/store-enum';
 
 
 // routes
@@ -41,7 +42,7 @@ export const ROUTES: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forChild(ROUTES),
-    StoreModule.forFeature('products',reducers)
+    StoreModule.forFeature(StoreEnum.PRODUCTS,reducers)
   ],
   providers: [...fromServices.services],
   declarations: [...fromContainers.containers, ...fromComponents.components],
