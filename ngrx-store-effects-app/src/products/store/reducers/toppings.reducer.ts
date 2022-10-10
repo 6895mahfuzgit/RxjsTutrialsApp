@@ -17,6 +17,9 @@ export const initialState: ToppingsState = {
 export function reducer(state = initialState,
     action: fromToppings.ToppingsAction): ToppingsState {
 
+
+
+        
     switch (action.type) {
         case fromToppings.LOAD_TOPPINGS: {
 
