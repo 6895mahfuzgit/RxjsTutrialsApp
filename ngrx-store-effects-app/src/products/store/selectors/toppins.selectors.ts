@@ -18,7 +18,7 @@ export const getAllToppings = createSelector(
         return Object.keys(entities).map(id => entities[+id])
     });
 
-    
+
 export const getToppingsLoading = createSelector(
     getToppingState,
     fromToppings.getToppingsLoading);
@@ -26,3 +26,7 @@ export const getToppingsLoading = createSelector(
 export const getToppingsLoaded = createSelector(
     getToppingState,
     fromToppings.getToppingsLoaded);
+
+export const getSelctedToppings = createSelector(
+    getToppingState,
+    fromToppings.getSelctedToppings);

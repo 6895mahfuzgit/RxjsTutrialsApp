@@ -2,7 +2,7 @@ import { type } from 'os';
 import { Topping } from './../../models/topping.model';
 import { Action } from '@ngrx/store';
 
-//toppings
+ //toppings
 export const LOAD_TOPPINGS = '[Products] Load Toppings';
 export const LOAD_TOPPINGS_FAIL = '[Products] Load Toppings Fail';
 export const LOAD_TOPPINGS_SUCCESS = '[Products] Load Toppings Success';
