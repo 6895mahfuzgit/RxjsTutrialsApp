@@ -27,7 +27,6 @@ export function reducer(
             };
         }
 
-
         case fromPizzas.LOAD_PIZZAS_SUCCESS: {
             const pizzas = action.payload;
             const entities = pizzas.reduce((entities: { [id: number]: Pizza }, pizza: Pizza) => {
