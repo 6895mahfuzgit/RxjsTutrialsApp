@@ -66,7 +66,7 @@ export function reducer(
                 entities
             };
         }
-        
+
         case fromPizzas.UPDATE_PIZZA:
         case fromPizzas.CREATE_PIZZAS_SUCCESS: {
             const pizza = action.payload;
@@ -80,6 +80,15 @@ export function reducer(
             };
         }
 
+        case fromPizzas.REMOVE_PIZZAS_SUCCESS: {
+            const pizza = action.payload;
+            const {[pizza.id]:removed,...entities}=state.entities;
+            
+            return {
+                ...state, 
+                entities
+            };
+        }
         
     }
     return state;
