@@ -51,7 +51,7 @@
   ],
   "pizzas": [
     {
-      "name": "Blazin' Inferno",
+      "name": "Blazin' Inferno 999",
       "toppings": [
         {
           "id": 10,
@@ -70,12 +70,12 @@
           "name": "chili"
         },
         {
-          "id": 7,
-          "name": "olive"
-        },
-        {
           "id": 2,
           "name": "bacon"
+        },
+        {
+          "id": 1,
+          "name": "anchovy"
         }
       ],
       "id": 1
