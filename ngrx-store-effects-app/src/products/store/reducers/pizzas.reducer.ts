@@ -83,7 +83,7 @@ export function reducer(
             const pizza = action.payload;
             const { [pizza.id]: removed, ...entities } = state.entities;
             return {
-                ...state,
+                ...state,   
                 entities
             };
         }
