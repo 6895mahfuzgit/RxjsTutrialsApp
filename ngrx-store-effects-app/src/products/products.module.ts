@@ -38,6 +38,7 @@ export const ROUTES: Routes = [
   },
   {
     path: ':pizzaId',
+    canActivate:[fromGuards.PizzaExists],
     component: fromContainers.ProductItemComponent,
   },
 ];
@@ -51,7 +52,8 @@ export const ROUTES: Routes = [
     StoreModule.forFeature(StoreEnum.PRODUCTS,reducers),
     EffectsModule.forFeature(effects)
   ],
-  providers: [...fromServices.services,...fromGuards.guards],
+  providers: [...fromServices.services,...fromGuards.guards
+  ],
   declarations: [...fromContainers.containers, ...fromComponents.components],
   exports: [...fromContainers.containers, ...fromComponents.components],
 })
